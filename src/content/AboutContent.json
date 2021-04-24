@@ -1,0 +1,31 @@
+{
+  "title": "Profitable, Reliable & Innovative",
+  "text": "Supporting investors for over 7 years",
+  "section": [
+    {
+      "title": "Why Valued?",
+      "content": "Valued is the leading online savings & investment platform in the US. For over 7 years, our customers have saved and invested billions of Dollers that they would normally be tempted to spend.",
+      "icon": "notes.svg"
+    },
+    {
+      "title": "Security Comes First?",
+      "content": "Valued uses the highest levels of Internet Security, and it is secured by 256 bits SSL security encryption to ensure that your information is completely protected from fraud.",
+      "icon": "notes.svg"
+    }
+  ],
+
+  "title2": "Light,  & Responsive",
+  "text2": "This template is ready to use, so you don't need to change anything at a component level, unless you want to customize the default styling.",
+  "section2": [
+    {
+      "title2": "Why Antd?",
+      "content2": "Ant Design is a React UI library that has a lot of easy-to-use components for building elegant UI.",
+      "icon2": "notes.svg"
+    },
+    {
+      "title2": "Why styled-components?",
+      "content2": "Styled Components gives you total control over your components. Two-factor authentication (2FA) by default on all PiggyVest accounts, to securely protect you from unauthorised access and impersonation.",
+      "icon2": "notes.svg"
+    }
+  ]
+}

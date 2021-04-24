@@ -1,0 +1,24 @@
+{
+  "title": "A Convenient and Better Way to Save & Invest",
+  "text": "valued helps over 2 million investors achieve their financial goals by helping them save and invest with ease. Earn 5% - 15% interests on savings and over 25% return on investments",
+  "button": [
+    {
+      "title": "Explore"
+    },
+    {
+      "title": "Learn More",
+      "color": "#fff"
+    }
+  ],
+  "title2": "Landing page template for developers & startups A",
+  "text2": "Beautifully designed templates using React.js, ant design and styled-components! Save weeks of time and build your landing page in minutes.",
+  "button2": [
+    {
+      "title2": "Explore"
+    },
+    {
+      "title2": "Learn More",
+      "color2": "#fff"
+    }
+  ]
+}
