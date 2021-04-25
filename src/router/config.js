@@ -10,9 +10,14 @@ const routes = [
     component: "Dashboard",
   },
   {
-    path: ["/dashboard", "/dashboard"],
+    path: ["/signin", "/signin"],
     exact: true,
-    component: "Dashboard",
+    component: "SignIn",
+  },
+  {
+    path: ["/signup", "/signup"],
+    exact: true,
+    component: "SignUp",
   }
 ];
 
