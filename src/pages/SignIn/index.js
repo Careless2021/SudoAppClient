@@ -14,6 +14,13 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 
 import Footer from "../../components/Footer/index"
+// 
+import Zoom from "react-reveal/Zoom";
+import useForm from "../../components/ContactForm/useForm";
+import validate from "../../components/ContactForm/validationRules";
+
+import * as S from "../../components/ContactForm/styles";
+import { withTranslation } from "react-i18next";
 
 function Copyright() {
   return (
@@ -48,7 +55,23 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SignIn() {
+const SignIn = () => {
+  // new codes begin
+  const { values, errors, handleChange, handleSubmit } = useForm(validate);
+
+  const ValidationType = ({ type }) => {
+    const ErrorMessage = errors[type];
+    return errors[type] ? (
+      <Zoom cascade>
+        <S.Span>{ErrorMessage}</S.Span>
+      </Zoom>
+    ) : (
+      <S.Span />
+    );
+  };
+
+  //New Code End
+
   const classes = useStyles();
 
   return (
@@ -62,7 +85,7 @@ export default function SignIn() {
         <Typography component="h1" variant="h5">
           Sign in
         </Typography>
-        <form className={classes.form} noValidate>
+        <form className={classes.form} onSubmit={handleSubmit} >
           <TextField
             variant="outlined"
             margin="normal"
@@ -73,7 +96,10 @@ export default function SignIn() {
             name="email"
             autoComplete="email"
             autoFocus
+            onChange={handleChange}
+            value={values.email || ""}
           />
+          <ValidationType type="email" />
           <TextField
             variant="outlined"
             margin="normal"
@@ -84,7 +110,10 @@ export default function SignIn() {
             type="password"
             id="password"
             autoComplete="current-password"
+            onChange={handleChange}
+            value={values.password || ""}
           />
+          <ValidationType type="password" />
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
             label="Remember me"
@@ -95,7 +124,6 @@ export default function SignIn() {
             variant="contained"
             color="primary"
             className={classes.submit}
-            href='dashboard'
           >
             Sign In
           </Button>
@@ -122,3 +150,5 @@ export default function SignIn() {
     </div>
   );
 }
+
+export default withTranslation()(SignIn);

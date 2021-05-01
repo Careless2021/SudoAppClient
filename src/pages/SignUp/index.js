@@ -15,6 +15,14 @@ import Container from '@material-ui/core/Container';
 
 import Footer from "../../components/Footer/index"
 
+// 
+import Zoom from "react-reveal/Zoom";
+import useForm from "../../components/ContactForm/useForm";
+import validate from "../../components/ContactForm/validationRules";
+
+import * as S from "../../components/ContactForm/styles";
+import { withTranslation } from "react-i18next";
+
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -48,7 +56,22 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SignUp() {
+const SignUp = () => {
+    // new codes begin
+    const { values, errors, handleChange, handleSubmit } = useForm(validate);
+
+    const ValidationType = ({ type }) => {
+      const ErrorMessage = errors[type];
+      return errors[type] ? (
+        <Zoom cascade>
+          <S.Span>{ErrorMessage}</S.Span>
+        </Zoom>
+      ) : (
+        <S.Span />
+      );
+    };
+  
+    //New Code End
   const classes = useStyles();
 
   return (
@@ -62,7 +85,7 @@ export default function SignUp() {
         <Typography component="h1" variant="h5">
           Sign up
         </Typography>
-        <form className={classes.form} noValidate>
+        <form className={classes.form} onSubmit={handleSubmit}>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
               <TextField
@@ -96,7 +119,10 @@ export default function SignUp() {
                 label="Email Address"
                 name="email"
                 autoComplete="email"
+                onChange={handleChange}
+                value={values.email || ""}
               />
+              <ValidationType type="email" />
             </Grid>
             <Grid item xs={12}>
               <TextField
@@ -108,7 +134,10 @@ export default function SignUp() {
                 type="password"
                 id="password"
                 autoComplete="current-password"
+                onChange={handleChange}
+                value={values.password || ""}
               />
+              <ValidationType type="password" />
             </Grid>
             <Grid item xs={12}>
               <TextField
@@ -120,7 +149,10 @@ export default function SignUp() {
                 type="confirmPassword"
                 id="confirmPassword"
                 autoComplete="current-password"
+                onChange={handleChange}
+                value={values.confirmPassword || ""}
               />
+              <ValidationType type="confirmPassword" />
             </Grid>
             <Grid item xs={12}>
               <FormControlLabel
@@ -135,7 +167,6 @@ export default function SignUp() {
             variant="contained"
             color="primary"
             className={classes.submit}
-            href="/dashboard"
           >
             Sign Up
           </Button>
@@ -157,3 +188,8 @@ export default function SignUp() {
     </div>
   );
 }
+
+export default withTranslation()(SignUp);
+
+// noValidate
+// href="dashboard"

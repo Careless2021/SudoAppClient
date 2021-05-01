@@ -14,6 +14,7 @@ const Button = lazy(() => import("../../common/Button"));
 const TextArea = lazy(() => import("../../common/TextArea"));
 
 const Contact = ({ title, content, id, t }) => {
+  
   const { values, errors, handleChange, handleSubmit } = useForm(validate);
 
   const ValidationType = ({ type }) => {

@@ -26,6 +26,8 @@ const useForm = (validate) => {
         })
         .then(() => {
           setShouldSubmit(true);
+        }).catch(err => {
+          setShouldSubmit(true);
         });
     }
   };
