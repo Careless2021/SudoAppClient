@@ -1,0 +1,27 @@
+GMAIL :     email - sudoapp2021@gmail.com 
+            password - @#$SudoApp2021!
+GITHUB :    AcctUsed - gmail
+            Username - Careless2021
+            password - @#$SudoApp2021!
+
+
+http://investment-heaven.herokuapp.com/api/v1/swagger-ui.html
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+antd axios clsx http-proxy-middleware i18next i18next-browser-languagedetector 
+i18next-xhr-backend markdown-to-jsx prop-types react-final-form react-i18next
+react-reveal react-router-dom validator eslint-webpack-plugin flatted
